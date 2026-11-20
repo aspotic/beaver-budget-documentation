@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Beaver Budget — Canadian Household Budget &amp; CRA Retirement Planner</title>
+    <meta
+      name="description"
+      content="Plan your monthly cash flow, build lasting savings habits, and map out a realistic Canadian retirement—offline-first and stored directly on your device."
+    />
+    <link rel="icon" type="image/svg+xml" href="./logo.svg" />
+    <style>
+      :root {
+        --bg-app: #f4f1ea;
+        --bg-card: #faf8f3;
+        --bg-subtle: #eae5d9;
+        --text-primary: #161816;
+        --text-secondary: #525750;
+        --text-muted: #7c8279;
+        --brand-primary: #1e4631;
+        --brand-tint: #e3ece6;
+        --amber-accent: #c85a17;
+        --border-subtle: #ded9ce;
+        --link-primary: #1d5ca8;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg-app: #111311;
+          --bg-card: #181b18;
+          --bg-subtle: #202420;
+          --text-primary: #eceae4;
+          --text-secondary: #a0a69e;
+          --text-muted: #8a9088;
+          --brand-primary: #52b788;
+          --brand-tint: #162a20;
+          --amber-accent: #f08c4b;
+          --border-subtle: #272b27;
+          --link-primary: #60a5fa;
+        }
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg-app);
+        color: var(--text-primary);
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .page {
+        max-width: 780px;
+        margin: 0 auto;
+        padding: 28px 18px 48px;
+      }
+
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        margin-bottom: 24px;
+        flex-wrap: wrap;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+        color: var(--text-primary);
+      }
+
+      .brand img {
+        width: 44px;
+        height: 44px;
+        display: block;
+      }
+
+      .brand-name {
+        font-size: 1.15rem;
+        font-weight: 700;
+        letter-spacing: -0.01em;
+      }
+
+      .nav-link {
+        color: var(--link-primary);
+        font-weight: 600;
+        font-size: 0.95rem;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+
+      .card {
+        background: var(--bg-card);
+        border: 1px solid var(--border-subtle);
+        border-radius: 16px;
+        padding: 24px;
+        margin-bottom: 16px;
+      }
+
+      .hero {
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+      }
+
+      .hero-logo {
+        width: 76px;
+        height: 76px;
+        flex-shrink: 0;
+        display: block;
+      }
+
+      h1 {
+        margin: 0 0 8px;
+        font-size: 1.65rem;
+        line-height: 1.25;
+        letter-spacing: -0.02em;
+      }
+
+      h2 {
+        margin: 0 0 12px;
+        font-size: 1.1rem;
+        line-height: 1.35;
+        color: var(--brand-primary);
+      }
+
+      .lead {
+        margin: 0 0 16px;
+        color: var(--text-secondary);
+        font-size: 1.02rem;
+      }
+
+      .pill-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .pill {
+        display: inline-block;
+        padding: 4px 10px;
+        border-radius: 9999px;
+        background: var(--brand-tint);
+        color: var(--brand-primary);
+        font-size: 0.82rem;
+        font-weight: 600;
+      }
+
+      .feature-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .feature-list li {
+        padding: 12px 0;
+        border-top: 1px solid var(--border-subtle);
+      }
+
+      .feature-list li:first-child {
+        border-top: none;
+        padding-top: 0;
+      }
+
+      .feature-list li:last-child {
+        padding-bottom: 0;
+      }
+
+      .feature-title {
+        display: block;
+        font-weight: 700;
+        color: var(--text-primary);
+        margin-bottom: 2px;
+      }
+
+      .feature-desc {
+        color: var(--text-secondary);
+        font-size: 0.95rem;
+      }
+
+      .cta-row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+      }
+
+      .btn-primary {
+        display: inline-block;
+        padding: 11px 18px;
+        border-radius: 10px;
+        background: var(--brand-primary);
+        color: #faf8f3;
+        font-weight: 600;
+        font-size: 0.95rem;
+        text-decoration: none;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        .btn-primary {
+          background: #2d6a4f;
+        }
+      }
+
+      .notice {
+        background: var(--bg-subtle);
+        border: 1px solid var(--border-subtle);
+        border-radius: 12px;
+        padding: 16px 18px;
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+      }
+
+      .notice strong {
+        color: var(--amber-accent);
+      }
+
+      footer {
+        margin-top: 22px;
+        color: var(--text-muted);
+        font-size: 0.86rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 8px;
+      }
+
+      @media (max-width: 540px) {
+        .hero {
+          flex-direction: column;
+          gap: 14px;
+        }
+        .card {
+          padding: 18px;
+        }
+        h1 {
+          font-size: 1.45rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <header class="topbar">
+        <a class="brand" href="./index.html">
+          <img src="./logo.svg" alt="Beaver Budget emblem" />
+          <span class="brand-name">Beaver Budget</span>
+        </a>
+        <nav aria-label="Site navigation">
+          <a class="nav-link" href="./privacy-policy.html">Privacy Policy</a>
+        </nav>
+      </header>
+
+      <section class="card hero">
+        <img class="hero-logo" src="./logo.svg" alt="Beaver Budget logo" />
+        <div>
+          <h1>Canadian Household Budget &amp; CRA Retirement Planner</h1>
+          <p class="lead">
+            Plan your monthly cash flow, catch bill-timing crunches before payday, and map out a realistic
+            Canadian retirement—all offline-first and stored directly on your device.
+          </p>
+          <div class="pill-row">
+            <span class="pill">TFSA · RRSP · FHSA</span>
+            <span class="pill">CPP/QPP &amp; OAS</span>
+            <span class="pill">100% On-Device</span>
+            <span class="pill">Optional JSON &amp; Drive Backup</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="card" aria-labelledby="features-heading">
+        <h2 id="features-heading">What Beaver Budget Covers</h2>
+        <ul class="feature-list">
+          <li>
+            <span class="feature-title">Active Budget &amp; Cash-Flow Timing</span>
+            <span class="feature-desc">
+              Track paychecks (federal/provincial tax, CPP/QPP, and EI ceilings), repeating bills, and monthly
+              savings transfers. Spot potential shortfalls early and swipe bills as Paid when they clear.
+            </span>
+          </li>
+          <li>
+            <span class="feature-title">Household Accounts &amp; CRA Ownership Rules</span>
+            <span class="feature-desc">
+              Organize Chequing, Credit, TFSA, RRSP, FHSA, and Taxable accounts for 1 or 2 adults plus 50/50
+              Joint accounts—enforcing CRA individual ownership on registered accounts while splitting eligible
+              non-registered income accurately.
+            </span>
+          </li>
+          <li>
+            <span class="feature-title">Properties, Mortgages &amp; Optional Rentals</span>
+            <span class="feature-desc">
+              Track primary residences, renewal countdowns, secured loans, and optional rental income/operating
+              profiles without cluttering day-to-day budgeting.
+            </span>
+          </li>
+          <li>
+            <span class="feature-title">Flippable Retirement Trajectory &amp; Plan Checkup</span>
+            <span class="feature-desc">
+              See savings grow year by year, compare Essentials vs. Nice-to-Haves vs. Luxuries milestones, model
+              CPP/QPP and OAS timing, and run on-device plan checkups across solvency, longevity, and CRA room.
+            </span>
+          </li>
+          <li>
+            <span class="feature-title">Private by Default</span>
+            <span class="feature-desc">
+              No developer backend servers, analytics trackers, or ad SDKs. Export portable JSON backups anytime
+              or optionally sync backups directly to your own Google Drive.
+            </span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="card cta-row" aria-label="Privacy Policy and Backups">
+        <div>
+          <strong style="display: block; margin-bottom: 2px;">Privacy &amp; Data Handling</strong>
+          <span style="color: var(--text-secondary); font-size: 0.94rem;">
+            Read how on-device storage and optional Google Drive backups work for <code>com.beaverbudget.projector</code>.
+          </span>
+        </div>
+        <a class="btn-primary" href="./privacy-policy.html">Read Privacy Policy</a>
+      </section>
+
+      <section class="notice" aria-label="Educational Notice">
+        <strong>Educational Notice:</strong> Beaver Budget is a personal budgeting, cash-flow estimation, and
+        retirement projection calculator provided for informational and educational purposes only. It is not a
+        bank, lender, or brokerage and does not provide regulated tax, legal, accounting, or investment advice.
+      </section>
+
+      <footer>
+        <span>Beaver Budget · Package ID: <code>com.beaverbudget.projector</code></span>
+        <a class="nav-link" href="./privacy-policy.html">Privacy Policy</a>
+      </footer>
+    </main>
+  </body>
+</html>

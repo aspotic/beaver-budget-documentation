@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="39 39 434 434" width="512" height="512">
+  <defs>
+    <clipPath id="inner-medallion-clip">
+      <circle cx="256" cy="256" r="167.8" />
+    </clipPath>
+    <clipPath id="outer-gold-clip">
+      <circle cx="256" cy="256" r="215.8" />
+    </clipPath>
+  </defs>
+
+  <!-- Inner Warm Cream Disc (#F7F5F0) Inside Inner Ring -->
+  <circle cx="256" cy="256" r="168.5" fill="#F7F5F0" />
+
+  <!-- Solid Sage-Green Ring to Edge (r = 167.8 .. 216.8) -->
+  <circle cx="256" cy="256" r="192.3" fill="none" stroke="#4A9676" stroke-width="49.0" />
+  <circle cx="256" cy="256" r="167.8" fill="none" stroke="#37765B" stroke-width="2.2" />
+
+  <!-- Rotated 30 deg CW Up-Right Stemless Mint-Gold Maple Leaf -->
+  <g clip-path="url(#outer-gold-clip)">
+    <path d="M 356.34,85.09 Q 371.39,74.87 370.07,93.02 L 367.42,129.32 Q 366.09,147.47 378.01,150.08 L 401.84,155.30 Q 413.76,157.91 398.55,174.76 L 368.11,208.45 Q 352.89,225.29 368.09,228.57 L 398.47,235.13 Q 413.67,238.41 410.55,246.98 L 404.31,264.13 Q 401.19,272.70 414.57,286.53 L 441.32,314.18 Q 454.70,328.00 443.92,333.99 L 422.37,345.95 Q 411.59,351.93 410.83,360.65 L 409.31,378.08 Q 408.55,386.79 384.71,381.57 L 337.04,371.14 Q 313.20,365.92 309.45,369.24 L 301.95,375.90 Q 298.19,379.22 278.97,368.12 L 240.53,345.93 Q 221.30,334.83 202.08,323.73 L 163.64,301.54 Q 144.41,290.44 145.42,285.53 L 147.43,275.70 Q 148.43,270.79 132.00,252.76 L 99.12,216.69 Q 82.68,198.65 89.85,193.64 L 104.18,183.61 Q 111.35,178.59 111.14,166.27 L 110.73,141.62 Q 110.52,129.29 129.18,133.96 L 166.50,143.31 Q 185.17,147.98 191.03,140.99 L 202.76,127.02 Q 208.63,120.03 219.06,131.55 L 239.94,154.58 Q 250.37,166.10 257.35,144.50 L 271.31,101.30 Q 278.29,79.70 286.51,88.71 L 302.95,106.75 Q 311.17,115.76 326.22,105.54 Z" fill="#DCC590" stroke="#AE9256" stroke-width="3.6" stroke-linejoin="round" />
+    <line x1="229.76" y1="320.18" x2="335.46" y2="137.11" stroke="#C6AB70" stroke-width="8.0" stroke-linecap="round" />
+    <line x1="242.44" y1="298.22" x2="387.66" y2="308.83" stroke="#C6AB70" stroke-width="8.0" stroke-linecap="round" />
+    <line x1="242.44" y1="298.22" x2="160.65" y2="177.76" stroke="#C6AB70" stroke-width="8.0" stroke-linecap="round" />
+  </g>
+
+  <!-- Smaller Grounded Beaver Portrait (clipped cleanly to inner ring r=167.8) -->
+  <g clip-path="url(#inner-medallion-clip)">
+    <!-- Grounded Chest Shoulders & Belly (layered cleanly BEHIND smooth head/chin oval) -->
+    <path d="M 132.0,457.8 L 159.2,339.9 L 352.8,339.9 L 380.0,457.8 Z"
+          fill="#926D5A" stroke="#5F4537" stroke-width="6.4" stroke-linejoin="round" />
+    <ellipse cx="256.0" cy="427.6" rx="72.6" ry="51.4" fill="#AD8374" />
+
+    <!-- Rounded Ears -->
+    <g>
+      <circle cx="177.3" cy="228.7" r="21.9" fill="#926D5A" stroke="#5F4537" stroke-width="6.2" />
+      <circle cx="178.1" cy="230.2" r="11.3" fill="#6E4E3E" />
+      <circle cx="334.7" cy="228.7" r="21.9" fill="#926D5A" stroke="#5F4537" stroke-width="6.2" />
+      <circle cx="333.9" cy="230.2" r="11.3" fill="#6E4E3E" />
+    </g>
+
+    <!-- Smooth Unbroken Round Head & Chubby Cheek/Chin Curve -->
+    <path d="
+      M 256.0,211.3
+      C 295.3,211.3 327.1,220.4 341.5,249.1
+      C 356.6,279.3 361.1,324.7 346.0,353.5
+      C 327.9,385.2 292.3,389.8 256.0,389.8
+      C 219.7,389.8 184.1,385.2 166.0,353.5
+      C 150.9,324.7 155.4,279.3 170.5,249.1
+      C 184.9,220.4 216.7,211.3 256.0,211.3
+      Z"
+      fill="#926D5A" stroke="#5F4537" stroke-width="6.4" stroke-linejoin="round" />
+
+    <!-- Tapered Buck Teeth BEHIND Muzzle -->
+    <path d="M 237.5,317.2 L 274.5,317.2 L 269.0,348.9 Q 267.8,355.0 262.4,355.0 L 249.6,355.0 Q 244.2,355.0 243.0,348.9 Z" fill="#F1F3E6" stroke="#5F4537" stroke-width="5.6" stroke-linejoin="round" />
+
+    <!-- Plump Teardrop Tan Muzzle Pads IN FRONT OF Upper Teeth -->
+    <path d="M 256.0,274.1 C 279.4,275.6 296.1,294.5 294.6,313.4 C 291.5,332.3 268.9,336.1 256.0,321.7 C 243.1,336.1 220.5,332.3 217.4,313.4 C 215.9,294.5 232.6,275.6 256.0,274.1 Z" fill="#AC8272" />
+
+    <!-- Clean Uninterrupted Vertical Center Divider (nose base down to bottom edge of teeth) -->
+    <line x1="256.0" y1="304.3" x2="256.0" y2="355.0"
+          stroke="#5F4537" stroke-width="5.8" stroke-linecap="round" />
+
+    <!-- Smooth W-Shaped Smile Curve Hugging Muzzle Bottom & Over Teeth -->
+    <path d="M 217.9,313.4 C 222.0,333.0 243.9,335.3 256.0,321.7 C 268.1,335.3 290.0,333.0 294.1,313.4" fill="none" stroke="#5F4537" stroke-width="5.8" stroke-linecap="round" stroke-linejoin="round" />
+
+    <!-- Guitar-Pick / Rounded Inverted-Triangle Nose & Specular Pill -->
+    <path d="M 256.0,273.3 C 276.0,273.3 277.9,285.4 270.8,295.2 C 265.4,302.3 259.8,305.4 256.0,305.4 C 252.2,305.4 246.6,302.3 241.2,295.2 C 234.1,285.4 236.0,273.3 256.0,273.3 Z" fill="#5F4537" />
+    <ellipse cx="256.0" cy="281.2" rx="9.1" ry="3.2" fill="#F1F4E7" />
+
+    <!-- Expressive Eyes & Highlight Dots -->
+    <circle cx="214.4" cy="270.3" r="10.9" fill="#5F4537" />
+    <circle cx="218.5" cy="266.3" r="3.8" fill="#F7F5F0" />
+    <circle cx="297.6" cy="270.3" r="10.9" fill="#5F4537" />
+    <circle cx="301.7" cy="266.3" r="3.8" fill="#F7F5F0" />
+
+    <!-- Relaxed Curved Eyebrows -->
+    <path d="M 199.3,247.6 Q 210.6,240.8 222.0,245.3"
+          fill="none" stroke="#5F4537" stroke-width="5.4" stroke-linecap="round" />
+    <path d="M 290.0,245.3 Q 301.4,240.8 312.7,247.6"
+          fill="none" stroke="#5F4537" stroke-width="5.4" stroke-linecap="round" />
+  </g>
+
+  <!-- Crisp Inner-Ring Rim Arc Strictly Across Beaver Chest Width -->
+  <path d="M 152.5,388.1 A 167.8,167.8 0 0 0 359.5,388.1"
+        fill="none" stroke="#37765B" stroke-width="2.2" />
+
+</svg>

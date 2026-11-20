@@ -6,7 +6,7 @@
     <title>Privacy Policy — Beaver Budget</title>
     <meta
       name="description"
-      content="Privacy Policy for Beaver Budget (com.beaverbudget.projector): local-first on-device financial storage and optional user-initiated JSON or Google Drive backup."
+      content="Privacy Policy for Beaver Budget (com.beaverbudget.app): local-first on-device financial storage and optional user-initiated JSON or Google Drive backup."
     />
     <link rel="icon" type="image/svg+xml" href="./logo.svg" />
     <style>
@@ -193,7 +193,7 @@
         <h1>Privacy Policy — Beaver Budget</h1>
         <p class="meta">
           <strong>Effective Date:</strong> November 18, 2026<br />
-          <strong>Developer:</strong> Beaver Budget (<code>com.beaverbudget.projector</code>)<br />
+          <strong>Developer:</strong> Beaver Budget (<code>com.beaverbudget.app</code>)<br />
           <strong>Contact:</strong> See the developer support email listed on the Google Play Store page (or open an issue on the project repository).
         </p>
 
@@ -219,8 +219,7 @@
         <p>
           When you use Beaver Budget, the financial plan data you enter (such as income estimates, account balances,
           monthly outflows, mortgage/property figures, and tax/retirement preferences) is stored locally on your
-          device using Android application storage (<code>@capacitor/preferences</code> and WebView
-          <code>localStorage</code>).
+          device using private on-device application storage.
         </p>
         <p>You have full control over this local data:</p>
         <ul>
@@ -233,11 +232,11 @@
         <p>Beaver Budget gives you two optional ways to back up or move your plan data—neither runs unless you initiate it:</p>
         <ol>
           <li>
-            <strong>Local JSON Export / Import (<code>@capacitor/filesystem</code> / <code>@capacitor/share</code>):</strong><br />
+            <strong>Local JSON Export / Import:</strong><br />
             Generates a plain JSON backup file on your device so you can save or share it using a destination you choose.
           </li>
           <li>
-            <strong>Optional Google Drive Backup (<code>GoogleDriveAuthPlugin</code>):</strong><br />
+            <strong>Optional Google Drive Backup:</strong><br />
             If you explicitly choose to connect Google Drive backup in <strong>Settings → Backups</strong>, the app uses
             Google OAuth 2.0 (<code>https://accounts.google.com/</code> and
             <code>https://oauth2.googleapis.com/token</code>) with limited Drive scopes (<code>drive.appdata</code>
